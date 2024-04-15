@@ -63,8 +63,12 @@ int main()
         Negate();
         break;
     case 5:
+        std::cout << bitField << " shifted left results in:\n";
+        LeftShift();
         break;
     case 6:
+        std::cout << bitField << " shifted right results in:\n";
+        RightShift();
         break;
     }
 }
@@ -104,4 +108,14 @@ void Toggle(int bit)
 void Negate()
 {
     PrintBinary(~bitField);
+}
+
+void LeftShift()
+{
+    PrintBinary(bitField << 1);
+}
+
+void RightShift()
+{
+    PrintBinary(bitField >> 1);
 }
