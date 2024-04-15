@@ -59,6 +59,8 @@ int main()
 
         break;
     case 4:
+        std::cout << bitField << " negated results in:\n";
+        Negate();
         break;
     case 5:
         break;
@@ -97,4 +99,9 @@ void Toggle(int bit)
     bitField ^= (1 << bitIndex);
     std::cout << "Toggling bit at position " << bit << " results in:\n";
     PrintBinary(bitField);
+}
+
+void Negate()
+{
+    PrintBinary(~bitField);
 }
