@@ -52,6 +52,11 @@ int main()
 
         break;
     case 3:
+        std::cout << "Choose which bit index to toggle (1-32): ";
+        int bitToggleIndex;
+        std::cin >> bitToggleIndex;
+        Toggle(bitToggleIndex);
+
         break;
     case 4:
         break;
@@ -83,5 +88,13 @@ void TurnOff(int bit)
     int bitIndex = bit - 1;
     bitField &= ~(1 << bitIndex);
     std::cout << "Turning off bit at position " << bit << " results in:\n";
+    PrintBinary(bitField);
+}
+
+void Toggle(int bit)
+{
+    int bitIndex = bit - 1;
+    bitField ^= (1 << bitIndex);
+    std::cout << "Toggling bit at position " << bit << " results in:\n";
     PrintBinary(bitField);
 }
